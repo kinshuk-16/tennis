@@ -22,7 +22,7 @@
 <body>
 <!--menu bar -->
 <div class="menu">
-		<div class="container clearfix">
+		<div class="container clearfix" id="menu-content">
 
 
 			<div id="nav" class="grid_9 omega">
@@ -30,7 +30,11 @@
 					<li data-slide="2">Introduction</li>
 					<li data-slide="3">Mapping Surfaces</li>
 					<li data-slide="4">Aces</li>
-					<li data-slide="7">Credits</li>
+                    <li data-slide="5">Rally</li>
+                    <li data-slide="6">Serve Point</li>
+                    <li data-slide="7">Net Point</li>
+                    <li data-slide="8">One View</li>
+					<li data-slide="9">Credits</li>
 				</ul>
 			</div>
 
@@ -39,9 +43,9 @@
 
 <!-- Slide 1: Title -->
 	<div class="slide dark" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
-		<div class="container clearfix corner">
+		<div class="container clearfix corner" >
 
-			<div id="content" class="grid_12">
+			<div id="title-content" class="content grid_12">
 				<h1>TENNIS SURFACE </h1>
                 <h1>STUDY </h1>
 			</div>
@@ -52,19 +56,32 @@
 
 <!-- Slide 2: Introduction -->
 	<div class="slide light" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
-		<div class="container clearfix">
+		<div class="container clearfix" style=" ">
 
-			<div id="content" class="grid_12">
+			<div id="slide2-content" class="content grid_12">
 				<h1>A Game of surfaces</h1>
-				<p>Tennis is a ball and racket sport plaed between individually against two players or in team of two.
-                The object of the game is to play the ball in such a way that the opponent is not able to play a valid return. The player who is unable to return the ball will not gain a point, while the opposite player will. </p>
-				<p>There are 3 major surfaces of court that the game can be played on, HARD surface, CLAY surface and GRASS surface.
-                A hard surface can differ based on the senthetic material used to make them, like Deco Turf (US Open) aand Rebound Ace (Australian Open).</p>
+                <div id="slide2-content" class="content grid_6">
+    				<p>Tennis is played on a variety of surfaces and each surface has its own characteristics which affect the playing style of the game. There are four main types of courts depending on the materials used for the court surface: clay courts, hard courts, grass courts and carpet courts. 
+                    </p>
+                </div>
+                <div id="slide2-content" class="content grid_6 omega">
+    				<p>
+                    A hard surface can differ based on the senthetic material used to make them, like Deco Turf (US Open) aand Rebound Ace (Australian Open). The surface affects game by affecting how ball speed and bounce.
+                    </p>
+                </div>
 			</div>
-			<div id="content" class="grid_5 alpha">
+			<div id="slide2-content" class="content grid_12">
 
-				<img src="images/clay.gif" id="clay">
 				
+                <img src="images/clay.png" id="clay">
+                <img src="images/bounce_differences.png" id="bounce">
+                <img src="images/grass.png" id="grass">
+				<img src="images/hard.png" id="hard">
+
+                <img src="images/french.png" id="french">
+                <img src="images/aus.png" id="aus">
+                <img src="images/us.png" id="us">
+                <img src="images/wimbledon.png" id="wim">
 			</div>
 
 		</div>
@@ -74,19 +91,21 @@
 <!-- Slide 3: Map Dashboard -->
     <div class="slide dark" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
         <div class="container clearfix">
-            <div id="content" class="grid_12">
+            <div id="slide3-content" class="content grid_12">
                 <h1>Mapping surfaces</h1>
-            <div id="content" class="grid_6">
+            <div id="slide3-content" class="content grid_6">
                 <p>talk about total number of tournaments and how much is being played on what surfces. Talk about grand slams and tehir surfaces. talk abou the dist\parity and high cost of maintainance</p>
             </div>  
-            <div id="content" class="grid_6 omega">
-                <p>Hopefully get a D3 for this</p>
+            <div id="slide3-content" class="content grid_6 omega">
+                <p>talk about total number of tournaments and how much is being played on what surfces. Talk about grand slams and tehir surfaces. talk abou the dist\parity and high cost of maintainance</p>
+                <div id="bar">
+            </div>
             </div>
 
             
             <div id="map">
             </div>
-
+            
             
 
             </div>
@@ -97,41 +116,42 @@
 <!-- Slide 4: Aces Dashboard -->
     <div class="slide light" id="slide4" data-slide="4" data-stellar-background-ratio="0.5">
         <div class="container clearfix">
-            <div id="content" class="grid_12">
-                <h1>Stuff about Aces</h1>
+            <div id="slide4-content" class="content grid_12">
+                <h1>Acing It</h1>
                 
             </div>
-            <div id="content" class="grid_7">
+            <div id="slide4-content" class="content grid_7">
                 <p>Stuff about aces</p>
                 <p>stuff about how surface effects aces</p>
               
             </div>
-            <div id="content" class="grid_5 omega">
+            <div id="slide4-content" class="content grid_5 omega">
                 <p>the graphic/animation showing what is an ace graphically</p>
                 
             </div>
 
-
+            <div class="tableau">
             <!-- Begin Tableau Dashboard -->
                 <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1020px; height: 1033px;'><noscript><a href='#'><img alt='Aces ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ac&#47;ace_year&#47;Final&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1020' height='1033' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='ace_year&#47;Final' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ac&#47;ace_year&#47;Final&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
 
             <!-- End Tableau Dashboard -->
+            </div>
             </div>
         </div>
     </div>
 <!-- Slide 5: Rally Dashboard -->
     <div class="slide dark" id="slide5" data-slide="5" data-stellar-background-ratio="0.5">
         <div class="container clearfix">
-            <div id="content" class="grid_12">
-                <h1>Stuff about Aces</h1>
+            <div id="slide5-content" class="content grid_12">
+                <h1>Rally and Return</h1>
                 
             </div>
-            <div id="content" class="grid_7">
+            <div id="slide5-content" class="content grid_7">
                 <p>Stuff about aces</p>
                 <p>stuff about how surface effects aces</p>
               
             </div>
-            <div id="content" class="grid_5 omega">
+            <div id="slide5-content" class="content grid_5 omega">
                 <p>the graphic/animation showing what is an ace graphically</p>
                 
             </div>
@@ -147,16 +167,16 @@
 <!-- Slide 6: serve Dashboard -->
     <div class="slide light" id="slide6" data-slide="6" data-stellar-background-ratio="0.5">
         <div class="container clearfix">
-            <div id="content" class="grid_12">
-                <h1>Stuff about Aces</h1>
+            <div id="slide6-content" class="content grid_12">
+                <h1>Holding the Serve</h1>
                 
             </div>
-            <div id="content" class="grid_7">
+            <div id="slide6-content" class="content grid_7">
                 <p>Stuff about aces</p>
                 <p>stuff about how surface effects aces</p>
               
             </div>
-            <div id="content" class="grid_5 omega">
+            <div id="slide6-content" class="content grid_5 omega">
                 <p>the graphic/animation showing what is an ace graphically</p>
                 
             </div>
@@ -172,16 +192,16 @@
 <!-- Slide 7: Net point Dashboard -->
     <div class="slide dark" id="slide7" data-slide="7" data-stellar-background-ratio="0.5">
         <div class="container clearfix">
-            <div id="content" class="grid_12">
-                <h1>Stuff about Aces</h1>
+            <div id="slide7-content" class="content grid_12">
+                <h1>Net Attack</h1>
                 
             </div>
-            <div id="content" class="grid_7">
+            <div id="slide7-content" class="content grid_7">
                 <p>Stuff about aces</p>
                 <p>stuff about how surface effects aces</p>
               
             </div>
-            <div id="content" class="grid_5 omega">
+            <div id="slide7-content" class="content grid_5 omega">
                 <p>the graphic/animation showing what is an ace graphically</p>
                 
             </div>
@@ -196,27 +216,22 @@
     </div>       
     <!-- Slide 8: parallel coordinates  -->
     <div class="slide light" id="slide8" data-slide="8" data-stellar-background-ratio="0.5">
-        <div class="container clearfix">
-            <div id="content" class="grid_12">
-                <h1>Stuff about Aces</h1>
+        <div class="container clearfix" style="margin-right: 50px;">
+            <div id="slide8-content" class="content grid_12">
+                <h1>Bringing It All Together</h1>
                 
             </div>
-            <div id="content" class="grid_7">
+            <div id="slide8-content" class="content grid_7">
                 <p>Stuff about aces</p>
                 <p>stuff about how surface effects aces</p>
               
             </div>
-            <div id="content" class="grid_5 omega">
+            <div id="slide8-content" class="content grid_5 omega">
                 <p>the graphic/animation showing what is an ace graphically</p>
                 
             </div>
-            <select name ="year" onchange="yearSelector()" id="year">
-			  <option value="2011">2011</option>
-			  <option value="2012">2012</option>
-			  <option value="2013">2013</option>
-			  <option value="2014">2014</option>
-			  <option value="2015">2015</option>
-			</select>
+
+            
 			<div id = "pc"></div>
 			<div id = "key">
 				<h2>Key</h2>
@@ -224,6 +239,15 @@
 				<div class="cblock" id="hd"></div><span>Hard</span>
 				<div class="cblock" id="cl"></div><span>Clay</span>
 			</div>
+            <div id="select">
+            <form action="#" method="post" class="demoForm" id="demoForm">
+              <input type="radio" name="year" value="2011" > 2011<br>
+              <input type="radio" name="year" value="2012" > 2012<br>
+              <input type="radio" name="year" value="2013" > 2013<br>
+              <input type="radio" name="year" value="2014" > 2014<br>
+              <input type="radio" name="year" value="2015" > 2015<br>
+            </form>
+            </div>
             
             </div>
         </div>
@@ -233,7 +257,7 @@
 	<div class="slide" id="slide9" data-slide="9" data-stellar-background-ratio="0.5">
 		<div class="container clearfix">
 
-			<div id="content" class="grid_12">
+			<div id="slide9-content" class="grid_12">
 				<h1>Credits</h1>
 			</div>
 

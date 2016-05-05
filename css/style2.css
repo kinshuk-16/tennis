@@ -23,6 +23,21 @@ a:visited {
 	text-decoration: none;
 }
 
+#slide3-content{
+	height:100px;
+}
+#bar{
+	height:200px;
+	display: none;
+}
+#map{
+	position: absolute;
+	top:320px;
+    left: 50px;
+}
+
+
+
 /* Navigation */
 
 .menu {
@@ -33,6 +48,7 @@ a:visited {
 	background-color:#000;
 	z-index:100;
 	color:#fff;
+	opacity:0.7;
 }
 #logo {
 	text-align: center;
@@ -61,14 +77,23 @@ a:visited {
 	color: #f68f67;
 	font-weight:bold;
 }
-/* General Slides */ 
+#nav{
+	width:1050px;
+	margin-bottom: 15px;
+    
+}
+
+#menu-content{
+	margin-left: 50px;
+}
+/* General Slides */
 
 .slide {
 	background-attachment: fixed;
 	width:100%;
 	height:auto;
 	position: relative;
-	padding:140px 0;
+	padding:50px 0;
 }
 
 .slide h1 {
@@ -111,7 +136,7 @@ a:visited {
 	background-image:url('../images/tennis4.jpg');
 	background-color:#393E41;
 	color:#ffffff;
-	height: 75%;
+	height: 800px;
 	background-repeat: no-repeat;
 	text-shadow: 2px 2px 8px #000;
 }
@@ -122,11 +147,23 @@ a:visited {
 	margin: 0;
 	font-weight: 700;
 }
+#title-content{
+	padding-top: 100px;
+	position: absolute;
+    left: 50px;
+    width: 50%;
+}
 
-/* Slide 2: Intro */
+/* Slide 3: map */
 
-#ytplayer {
-	margin-top: 3em;
+#slide3 {
+	height:800px;
+
+}
+
+/*slide2 infographic*/
+#slide2{
+	height: 1400px;
 }
 
 /* Slide 4: Drought Dashboard */
@@ -161,6 +198,16 @@ td {
 
 /* Slide 7: Credits; */
 
+#slide7 h1 {
+/*	margin-top: 1em;
+*/}
+
+/*slide 8*/
+#slide8{
+	height: 800px;
+}
+
+/* Slide 9: Credits; */
 #slide9 {
 	background-image:url('../images/tennis2.jpg');
 	background-color:#000000;
@@ -169,10 +216,6 @@ td {
 	background-repeat: no-repeat;
 	text-shadow: 2px 2px 8px #000;
 }
-
-#slide7 h1 {
-/*	margin-top: 1em;
-*/}
 
 
 /* Tablet */
@@ -189,7 +232,7 @@ td {
 		display:none;
 	}
 
-	#content {
+	.content {
 		text-align:center;
 		width:100%;
 	}
@@ -219,6 +262,129 @@ td {
 
 }
 
+/*parallel*/
+#key{
+  display:block;
+  padding:20px;
+}
+
+.cblock{
+  display:inline-block;
+  width:20px;
+  height:20px;
+  background-color: #000;
+  margin-top:5px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+#gr{
+  background-color: #7FB800;
+}
+#hd{
+  background-color: #118AB2;
+}
+#cl{
+  background-color: #FA7921;
+}
 
 
+#pc{
+  display:inline-block;
+  width:80%;
+  position: absolute;
+  left: 10px;
+  top:250px;
+}
+#key{
+  display:block;
+  width:10%;
+  height:503px;
+  vertical-align: super;
+  float: right;
+  /* left: 850px; */
+  margin-left: 0px;
+}
+
+#select{
+  display:block;
+  width:10%;
+  height:503px;
+  vertical-align: super;
+  float: right;
+  /* left: 850px; */
+  margin-left: 0px;
+  height: 100px;
+  position: absolute;
+  left: 1120px;
+  top: 500px;
+}
+
+
+ #bounce{
+ 	display: inline-block;
+ 	width:50%;
+ 	height:600px;
+ 	margin:20px;
+ 	position: absolute;
+    left: 300px;
+ }
+ #clay{
+ 	display: inline-block;
+ 	width:18%;
+ 	position: absolute;
+    left: 20px;
+    top:400px;
+ }
+ #grass{
+ 	display: inline-block;
+ 	width:18%;
+ 	 position: absolute;
+    left: 1000px;
+    top:400px;
+ }
+#hard{
+ 	position: absolute;
+    left: 300px;
+    top:900px;
+    width:50%;
+    height:250px;
+ }
+
+#french{
+	width:200px;
+	display: inline-block;
+	height:300px;
+	margin:10px;
+	position: absolute;
+	top:1000px;
+	left:20px;
+}
+#aus{
+	width:200px;
+	display: inline-block;
+	height:280px;
+	margin:10px;
+	position: absolute;
+	top:1150px;
+	left:320px;
+}
+#us{
+	width:200px;
+	display: inline-block;
+	height:280px;
+	margin:10px;
+	position: absolute;
+	top:1150px;
+	left:700px;
+}
+#wim{
+	width:18%;
+	display: inline-block;
+	height:300px;
+	margin:10px;
+	position: absolute;
+	top:1000px;
+	left:1000px;
+}
 

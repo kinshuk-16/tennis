@@ -1,5 +1,5 @@
 
-var margin = {top: 30, right: 100, bottom: 20, left: 280},
+var margin = {top: 30, right: 100, bottom: 20, left: 200},
     width = 1100 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -31,6 +31,35 @@ var yearSelector = function (event) {
     }
     console.log(dset);
 };
+
+  var sz = document.forms['demoForm'].elements['year'];
+for (var i=0, len=sz.length; i<len; i++) {
+    sz[i].onclick = function() { 
+        if (this.value == "2011") {
+      dset = "../data/parallel2011.csv";
+      startD3();
+    }
+    else if (this.value =="2012") {
+      dset = "../data/parallel2012.csv";
+      startD3();
+    }
+    else if (this.value =="2013") {
+      dset = "../data/parallel2013.csv";
+      startD3();
+    }
+    else if (this.value =="2014") {
+      dset = "../data/parallel2014.csv";
+      startD3();
+    }
+    else if (this.value =="2015") {
+      dset = "../data/parallel2015.csv";
+      startD3();
+    }
+    console.log(dset);
+    };
+}
+
+
 
 function startD3(){
 	console.log("entereing main");

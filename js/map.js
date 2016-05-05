@@ -29,7 +29,7 @@ var width = 1200,
 		 	return "translate(" + projection(coordinates) + ")";})
 		 .attr("r", "5px")
 		 .attr("fill", function(d) {if (d.SURFACE.replace(/\s+/g, '') === "Hard") { return "#118AB2"; } else if (d.SURFACE.replace(/\s+/g, '') === "Clay") { return "#FA7921"; } else if (d.SURFACE.replace(/\s+/g, '') === "Grass") {return "#7FB800";}})
-		 .style("opacity",.5)
+		 .style("opacity",.7)
 		 .on('mousemove', function(d) {
 		                    var mouse = d3.mouse(svg.node()).map(function(d) {
 		                        return parseInt(d);
@@ -89,7 +89,7 @@ var width = 1200,
 
 		// Now create a bar chart
 		var width = 600,
-			height = 400;
+			height = 160;
 		var margin = {top: 20, right: 20, bottom: 20, left: 20};
 		var x = d3.scale.ordinal()
 						.domain(["Clay","Grass","Hard"])
@@ -104,7 +104,7 @@ var width = 1200,
 		    .scale(y)
 		    .orient("left");
 
-		var barchart = d3.select("#map").append("svg")
+		var barchart = d3.select("#bar").append("svg")
 						 .attr("width",width + margin.left + margin.right)
 						 .attr("height",height + margin.top + margin.bottom)
 						 .append("g")
