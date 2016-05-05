@@ -5,6 +5,7 @@ var width = 1200,
 		var tournaments = [];
 		var cities = [];
 
+
 		function load_citydata(callback) {
 			d3.json("../data/cities.topo.json",function(error,data) {
 				topojson.object(data, data.objects.cities).geometries.forEach(function(d) {
@@ -88,65 +89,73 @@ var width = 1200,
 
 
 		// Now create a bar chart
-		var width = 600,
-			height = 160;
-		var margin = {top: 20, right: 20, bottom: 20, left: 20};
-		var x = d3.scale.ordinal()
-						.domain(["Clay","Grass","Hard"])
-						.rangePoints([20,width-margin.left-margin.right-80]);
-		var y = d3.scale.linear()
-    					.range([height-margin.top-margin.bottom+20, 0]);
-    	var xAxis = d3.svg.axis()
-					    .scale(x)
-					    .orient("top");
+		var bar_width = 1000,
+			bar_height = 50;
+		var tourn_meta = [{data: [{tourn: "ATP", count: 23}], name: "Clay"}
+						 ,{data: [{tourn: "ATP", count: 7}], name: "Grass"}
+						 ,{data: [{tourn: "ATP", count: 35}], name: "Hard"}];
+		var tourn_meta = tourn_meta.map(function(d) {
+			return d.data.map(function(o,i) {
+				return {y: o.count,
+						x: o.tourn};
+			});
+		});
+		var stack = d3.layout.stack();
 
-		var yAxis = d3.svg.axis()
-		    .scale(y)
-		    .orient("left");
+		stack(tourn_meta);
 
-		var barchart = d3.select("#bar").append("svg")
-						 .attr("width",width + margin.left + margin.right)
-						 .attr("height",height + margin.top + margin.bottom)
-						 .append("g")
-						 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		var tourn_meta = tourn_meta.map(function(group) {
+			return group.map(function(d) {
+				return {
+					x: d.y,
+					y: d.x,
+					x0: d.y0
+				};
+			});
+		});
+		var bar_svg = d3.select("#bar-chart")
+					.append("svg")
+					.attr("width",bar_width)
+					.attr("height",bar_height)
+					.append("g");
+		var xMax = d3.max(tourn_meta, function(group) {
+			return d3.max(group, function(d) {
+				return d.x + d.x0;
+			});
+		});
+		var xScale = d3.scale.linear()
+        			   .domain([0, xMax])
+        			   .range([0, bar_width]),
+    		tourns = tourn_meta[0].map(function (d) {
+        				return d.y;
+    				}),
+    		yScale = d3.scale.ordinal()
+        					 .domain(tourns)
+        					 .rangeRoundBands([0, bar_height], .1);
 
-		d3.csv("../data/toun.csv", function(error,data) {
-			y.domain([0,d3.max(data,function(d) {return +d.NUM;})]);
-			barchart.append("g")
-				.attr("class","x axis")
-				.call(xAxis);
-
-			barchart.append("g")
-				.attr("class","y axis")
-				.call(yAxis)
-				.append("text")
-		        .attr("transform", "rotate(-90)")
-		        .attr("y", 6)
-		        .attr("dy", ".51em")
-		        .style("text-anchor", "end")
-		        .text("Number of matches");
-
-			barchart.selectAll(".bar")
-					.data(data)
-					.enter().append("rect")
-					.attr("class","bar")
-					.attr("id",function(d) {return d.SURFACE;})
-					.attr("x",function(d) {return x(d.SURFACE);})
-					.attr("y",function(d) {return y(d.NUM);})
-					.attr("height",function(d){ return height-margin.top-y(d.NUM);})
-					.attr("width",height/3)
-					.attr("fill",function(d) { if (d.SURFACE === "Clay") { return "#FA7921"} else if (d.SURFACE === "Hard") { return "#118AB2"} else {return "#7FB800"}})
-					.on('mousemove', function(d) {
-						tooltip.classed("hidden",false)
-							   .attr('style', 'left:' + (d3.event.pageX) + 'px; top:' + (d3.event.pageY - 28) + 'px')
-							   .html(d.NUM);
-						current_class = this.id;
-						d3.selectAll("circle").style("opacity",0);
-						d3.selectAll("."+current_class+"").style("opacity",1);
-						// d3.selectAll(".clay").style("opacity",0);
-					})
-					.on('mouseout',function(d) {
-						tooltip.classed("hidden",true).style("opacity",0);
-						d3.selectAll("circle").style("opacity",1);
-					});
-		});				
+		
+		var colors = ["orange","green","blue"];
+		var groups = bar_svg.selectAll("g")
+							.data(tourn_meta)
+							.enter()
+							.append("g")
+							.style("fill", function(d,i) {return colors[i];});
+		var rects = groups.selectAll("rect")
+						  .data(function(d) {return d;})
+						  .enter()
+						  .append("rect")
+						  .attr("id", function(d) { return d.x; })
+						  .attr("x",function(d) { return xScale(d.x0); })
+						  .attr("y",function(d) { return yScale(d.y); })
+						  .attr("height", function(d) { return yScale.rangeBand(); })
+						  .attr("width", function(d) { return xScale(d.x); })
+						  .on("mousemove", function(d) {
+						  	if (this.id == 23) { current_class = "Clay";} else if (this.id == 7) { current_class = "Grass";} else { current_class = "Hard";}
+							d3.selectAll("circle").style("opacity",0);
+							d3.selectAll("."+current_class+"").style("opacity",1);
+						  });	
+		rects.selectAll("text")
+			 .data()
+			 .text(function(d) { return d.x;})
+			 .attr("y", 0)
+			 .style("color","white");		
