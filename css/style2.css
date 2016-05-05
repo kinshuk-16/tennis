@@ -6,6 +6,7 @@ body {
 	font-size: 1em;
 	color: #484848;
 	background-color:#ffffff;
+	line-height: 150%
 }
 img {
 	max-width: 100%;
@@ -204,15 +205,16 @@ td {
 
 /*slide 8*/
 #slide8{
-	height: 800px;
+	height: 770px;
 }
 
 /* Slide 9: Credits; */
 #slide9 {
 	background-image:url('../images/tennis2.jpg');
+	background-size: 100%;
 	background-color:#000000;
 	color:#ffffff;
-	height: 75%;
+	height: 600px;
 	background-repeat: no-repeat;
 	text-shadow: 2px 2px 8px #000;
 }
@@ -317,7 +319,7 @@ td {
   height: 100px;
   position: absolute;
   left: 1120px;
-  top: 500px;
+  top: 350px;
 }
 
 
@@ -346,7 +348,7 @@ td {
 #hard{
  	position: absolute;
     left: 300px;
-    top:900px;
+    top:940px;
     width:50%;
     height:250px;
  }
@@ -366,7 +368,7 @@ td {
 	height:280px;
 	margin:10px;
 	position: absolute;
-	top:1150px;
+	top:1190px;
 	left:320px;
 }
 #us{
@@ -375,7 +377,7 @@ td {
 	height:280px;
 	margin:10px;
 	position: absolute;
-	top:1150px;
+	top:1190px;
 	left:700px;
 }
 #wim{

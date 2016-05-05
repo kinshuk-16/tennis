@@ -134,7 +134,7 @@ var width = 1200,
         					 .rangeRoundBands([0, bar_height], .1);
 
 		
-		var colors = ["orange","green","blue"];
+		var colors = ["#FA7921","#7FB800","#118AB2"];
 		var groups = bar_svg.selectAll("g")
 							.data(tourn_meta)
 							.enter()
