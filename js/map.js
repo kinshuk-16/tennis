@@ -153,9 +153,33 @@ var width = 1200,
 						  	if (this.id == 23) { current_class = "Clay";} else if (this.id == 7) { current_class = "Grass";} else { current_class = "Hard";}
 							d3.selectAll("circle").style("opacity",0);
 							d3.selectAll("."+current_class+"").style("opacity",1);
-						  });	
-		rects.selectAll("text")
-			 .data()
-			 .text(function(d) { return d.x;})
-			 .attr("y", 0)
-			 .style("color","white");		
+						  });
+
+		bar_svg.selectAll("text")
+			   .data(tourn_meta)
+			   .enter()
+			   .append("text")
+			   .text(function(d) {
+			   	console.log(d);
+			   	var val=""
+			   	if (d[0].x == 23){
+			   	val= "Clay";}
+			   	else if (d[0].x == 7){
+			   		val= "Grass";
+			   	}
+			   	else{
+			   		val= "Hard";
+			   	}
+			   	return val;
+			   })
+			   .attr("x", function(d) {
+			   		console.log(d[0].x0);
+			   		return xScale(d[0].x0) + 10;
+			   })
+			   .attr("y", function(d) {
+			   	console.log(d);
+			   		return yScale(d[0].y) +25 ;
+			   })
+			   .attr("font-family", "sans-serif")
+			   .attr("font-size", "16px")
+			   .attr("fill", "white");
