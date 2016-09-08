@@ -7,7 +7,7 @@ var width = 1200,
 
 
 		function load_citydata(callback) {
-			d3.json("../data/cities.topo.json",function(error,data) {
+			d3.json("data/cities.topo.json",function(error,data) {
 				topojson.object(data, data.objects.cities).geometries.forEach(function(d) {
 					cities.push({"city":d.id,"longitude":Number(d.properties.longitude),"latitude":Number(d.properties.latitude)});
 				});
@@ -16,7 +16,7 @@ var width = 1200,
 		}
 
 		function load_pointsonmap(city_data) {
-			d3.csv("../data/Surface_all-2.csv", function(error,data) {
+			d3.csv("data/Surface_all-2.csv", function(error,data) {
 			g.selectAll("circle")
 		 .data(data).enter()
 		 .append("circle")
@@ -65,7 +65,7 @@ var width = 1200,
 		var geoPath = d3.geo.path()
 		    .projection(projection);
 		// console.log("6. reading countries.topojson stuff");    
-		d3.json("../data/countries.topo.json", function(error, topology) {
+		d3.json("data/countries.topo.json", function(error, topology) {
 			g.selectAll("path")
 			  .data(topojson.object(topology, topology.objects.countries).geometries)
 			  .enter()
@@ -160,7 +160,7 @@ var width = 1200,
 			   .enter()
 			   .append("text")
 			   .text(function(d) {
-			   	console.log(d);
+			   	//console.log(d);
 			   	var val=""
 			   	if (d[0].x == 23){
 			   	val= "Clay";}
@@ -173,11 +173,11 @@ var width = 1200,
 			   	return val;
 			   })
 			   .attr("x", function(d) {
-			   		console.log(d[0].x0);
+			   		//console.log(d[0].x0);
 			   		return xScale(d[0].x0) + 10;
 			   })
 			   .attr("y", function(d) {
-			   	console.log(d);
+			   	//console.log(d);
 			   		return yScale(d[0].y) +25 ;
 			   })
 			   .attr("font-family", "sans-serif")

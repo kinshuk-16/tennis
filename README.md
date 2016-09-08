@@ -1,38 +1,11 @@
-///// Cool Kitten - Parrallax Scrolling responsive frame work - 1.0 /////
-Author: Jalxob
-Release Date: February 2013.
+# Tennis Surface study 
+ This website is part of final project for Information Visualization, a course at the [UC Berkeley School of Information](http://www.ischool.berkeley.edu/). 
+ Team: Tennis strategies ([Proxima DasMohapatra](https://www.linkedin.com/in/proximadas), [Kinshuk](https://www.linkedin.com/in/kinshuk2), [Puneet Sharma](https://www.linkedin.com/in/puneatsharma))
 
-///// Building /////
+The website was designed using [Cool Kitten](https://github.com/jalxob/cool-kitten), a framework by Jalxob. 
+Vizuallizations are created using Tableau and D3.js. 
+Data from [Jeff Sackmann](https://github.com/JeffSackmann/tennis_atp) tennis repository. 
+Tennis Player Silhouettes vector by Vector [Open Stock](https://www.vectoropenstock.com/).
 
-A small build script is included in order to minify and concatenate your javascript and css files. In order to use this script, you need to have *clean-css* and *uglify-js* installed globally using npm.
-
-``` bash
-sudo npm install clean-css uglify-js -g
-```
-
-Own the script
-
-``` bash
-chmod u+x compile.sh
-```
-
-Execute the script
-
-``` bash
-./compile.sh
-```
-
-///// Resources /////
-- Normalize.css
-- jQuery Easing Plugin
-- Stellar.js
-
-///// Questions & Contact /////
-This is my first framework so if you see any issue please let me know it.
-
-Website: www.jalxob.com/cool-kitten
-Author's website: www.jalxob.com
-Twitter: @Jalxob
-
-Build script and additional changes by [@james2doyle](https://github.com/james2doyle)
+###View the project online [here](http://people.ischool.berkeley.edu/~kinshuk/tennis/).
 
